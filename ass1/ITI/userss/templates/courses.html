@@ -1,0 +1,47 @@
+{%extends 'tem.html'%}
+{%block username%}
+Helle {{request.session.username}}
+{%endblock%}
+
+{%block content%}
+       <!--{{users}}-->
+<table border="1" width="100%">
+        <tr>
+                <td>ID</td>
+                <td>Name</td>
+        </tr>
+        {%for course in request.session.courses%}
+        <tr>
+                <td>{{course.id}}</td>
+                <td>{{course.name}}</td>
+        </tr>
+        {%endfor%}
+
+</table>
+
+{%endblock%}
+{{%extends 'tem.html'%}
+{%block username%}
+Helle {{request.session.username}}
+{%endblock%}
+
+{%block content%}
+       <!--{{users}}-->
+<table border="1" width="100%">
+        <tr>
+                <td>ID</td>
+                <td>Name</td>
+        </tr>
+        {%for course in request.session.courses%}
+        <tr>
+                <td>{{course.id}}</td>
+                <td>{{course.name}}</td>
+        </tr>
+        {%endfor%}
+
+</table>
+
+{%endblock%}
+{%block header%}
+        User - Courses
+{%endblock%}

@@ -1,0 +1,26 @@
+from django.db import models
+
+# Create your models here.
+{%extends 'insertUser.html'%}
+{%block username%}
+Helle {{request.session.username}}
+{%endblock%}
+
+{%block content%}
+       <!--{{users}}-->
+
+
+
+<form method="post">
+    {%csrf_token%}
+  <fieldset>
+    <legend>Add Course:</legend>
+    <label for="name"> name:</label><br>
+    <input type="text" name="name"   value=""><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+{%endblock%}
+{%block header%}
+        User - Dashboard
+{%endblock%}

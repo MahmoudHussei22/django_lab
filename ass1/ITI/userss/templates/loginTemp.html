@@ -1,0 +1,47 @@
+{%extends 'Temp.html'%}
+
+
+{%block content%}
+
+
+<form method="post">
+    {%csrf_token%}
+  <fieldset>
+    <label for="user name"> Username:</label></br>
+    <input type="text" name="username"   value=""></br>
+      <label for="password">password:</label><br>
+    <input type="password" name="password" value=""></br>
+    <input type="submit" value="Login">
+  </fieldset>
+     <div style="color:red">
+        <h2>
+            {{error}}
+        </h2>
+    </div>
+</form>
+{%endblock%}
+{{%extends 'Temp.html'%}
+
+
+{%block content%}
+
+
+<form method="post">
+    {%csrf_token%}
+  <fieldset>
+    <label for="user name"> Username:</label></br>
+    <input type="text" name="username"   value=""></br>
+      <label for="password">password:</label><br>
+    <input type="password" name="password" value=""></br>
+    <input type="submit" value="Login">
+  </fieldset>
+     <div style="color:red">
+        <h2>
+            {{error}}
+        </h2>
+    </div>
+</form>
+{%endblock%}
+{%block header%}
+        User - Login
+{%endblock%}

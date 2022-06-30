@@ -1,0 +1,56 @@
+{%extends 'tem.html'%}
+{%block username%}
+Helle {{request.session.username}}
+{%endblock%}
+
+{%block content%}
+       <!--{{users}}-->
+<table border="1" width="100%">
+        <tr>
+                <td>ID</td>
+                <td>Username</td>
+                <td>Email</td>
+                <td>Actions</td>
+        </tr>
+        {%for user in request.session.users%}
+        <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+          {%extends 'tem.html'%}
+{%block username%}
+Helle {{request.session.username}}
+{%endblock%}
+
+{%block content%}
+       <!--{{users}}-->
+<table border="1" width="100%">
+        <tr>
+                <td>ID</td>
+                <td>Username</td>
+                <td>Email</td>
+                <td>Actions</td>
+        </tr>
+        {%for user in request.session.users%}
+        <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                       <a href="{%url 'updateuser' user.id  %}">Update</a>
+                        <a href="{%url 'courses' user.id %}">Courses</a>
+                        <a href="{%url 'add_courses' user.id %}">Assign Courses</a>
+                       <a href="{%url 'deleteuser' user.id  %}">Delete</a>
+
+                </td>
+
+
+        </tr>
+        {%endfor%}
+
+</table>
+
+{%endblock%}
+{%block header%}
+        User - Dashboard
+{%endblock%}
